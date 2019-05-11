@@ -1,0 +1,26 @@
+<%= render template:"admin-template/header.html" %>
+    <div class="container">
+        <div class="row">
+                    <%= form_for(@author) do |t| %>
+                        <div class="form-group">
+                            <td><%= t.label :name, "Nama " %></td>
+                            <td><%= t.text_field :name, class:'form-control',type:'text', placeholder:'Masukkan Nama Pengarang' %></td>
+                        </div>
+                        <div class="form-group">
+                            <td><%= t.label :address, "Alamat Pengarang" %></td>
+                            <td><%= t.text_field :address, class:'form-control',type:'text', placeholder:'Alamat atau Tempat Tinggal Pengarang' %></td>
+                        </div>
+                        <div class="form-group">  
+                            <td><%= t.label :old, "Umur" %></td>
+                            <td><%= t.text_field :old, class:'form-control',type:'text', placeholder:'Masukkan Umur Pengarang' %></td>
+                        </div>
+                        <div class="form-group">
+                            <td><%= t.submit "Simpan" %></td>
+                        </div>
+                    <% end %>
+                </tr>
+                 <%= link_to 'Back', authors_path, class:'btn btn-default' %>
+            </table>
+        </div>
+    </div>
+<%= render template:"admin-template/footer.html" %>

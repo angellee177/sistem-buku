@@ -1,0 +1,32 @@
+<%= render template:"admin-template/header.html" %>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nama Pengarang</th>
+                        <th>Alamat</th>
+                        <th>Umur</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                    <% @authors.each do |author|%>
+                <tbody>
+                    <tr>
+                        <td><%= author.name %></td>
+                        <td><%= author.address %></td>
+                        <td><%= author.old %></td>
+                        <td><%= link_to 'Detail', author_path(author),class:'btn btn-info' %></td>
+                        <td><%= link_to 'Edit', edit_author_path(author), class:'btn btn-default' %></td>
+                        <td><%= link_to 'Delete', author_path(author), method: :delete, data: {confirm: 'Are You Sure?'}, class:'btn btn-danger'  %></td>
+                    </tr>
+                </tbody>
+                    <%end%>
+                <br>
+                <%= link_to "New Author", new_author_path, class:'btn btn-default' %>
+            </table>
+        </div>
+    </div>
+    <br>
+
+<%= render template:"admin-template/footer.html" %>

@@ -1,0 +1,20 @@
+<%= render template:"admin-template/header.html" %>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table">
+                <tr>
+                    <td>Nama Pengarang      :<%= @author.name %></td>
+                </tr>
+                <tr>
+                    <td>Address :<%= @author.address    %></td>
+                </tr>
+                <tr>
+                    <td>Umur        :<%= @author.old %></td>
+                </tr>
+            </table>
+            <br>
+            <br>
+             <%= link_to 'Back', authors_path, class:'btn btn-default' %>
+        </div>
+    </div>
+<%= render template:"admin-template/footer.html" %>

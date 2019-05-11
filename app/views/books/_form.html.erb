@@ -1,0 +1,33 @@
+<%= render template:"admin-template/header.html" %>
+    <div class="container">
+        <div class="row">
+                    <%= form_for(@book) do |t| %>
+                        <div class="form-group">
+                            <td><%= t.label :title, "Judul Buku" %></td>
+                            <td><%= t.text_field :title, class:'form-control', type:'text', placeholder:'Masukkan Judul Buku' %></td>
+                        </div>
+                        <div class="form-group">
+                            <td><%= t.label :description, "Sinopsis Buku" %></td>
+                            <td><%= t.text_field :description, class:'form-control',type:'text', placeholder:'Apa Sinopsis Buku?' %></td>
+                        </div>
+                        <div class="form-group">
+                            <td><%= t.label :author_id, "Author Name" %></td>
+                            <td><%= t.collection_select :author_id, Author.order(:name), :id, :name, class:'form-control'%></td>
+                        </div>
+                        <div class="form-group">  
+                            <td><%= t.label :page, "Jumlah Halaman" %></td>
+                            <td><%= t.text_field :page, class:'form-control', type:'integer', placeholder:'Masukkan Jumlah Halaman' %></td>
+                        </div>
+                        <div class="form-group">
+                            <td><%= t.label :price, "Harga Buku" %></td>
+                            <td><%= t.text_field :price, class:'form-control',type:'integer', placeholder:'Masukkan Harga Buku' %></td>
+                        </div>
+                        <div class="form-group">
+                            <td class="text-center"><%= t.submit "Simpan", class:'btn btn-default' %></td>
+                        </div>
+                    <% end %>
+            <br>
+            <%= link_to 'Back', books_path, class:'btn btn-default' %>
+        </div>
+    </div>
+<%= render template:"admin-template/footer.html" %>
