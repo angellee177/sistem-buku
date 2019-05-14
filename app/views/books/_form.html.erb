@@ -1,17 +1,22 @@
-<% if @book.errors.any? %>
-    <% @book.errors.full_messages.each do |msg| %>
-        <%= msg %>
-    <% end %>
-<% end %>
 <%= render template:"admin-template/header.html" %>
     <div class="container">
         <div class="row">
                     <%= form_for(@book) do |t| %>
                         <div class="form-group">
+                            <%# Menampilkan pesan error pada kolom 'Title' %>
+                            <% if @book.errors[:title].any? %>                        <div class="form-group">
+                                <%= @book.errors[:title].first %>
+                                <% end %>
+                            <% end %>
                             <td><%= t.label :title, "Judul Buku" %></td>
                             <td><%= t.text_field :title, class:'form-control', type:'text', placeholder:'Masukkan Judul Buku' %></td>
                         </div>
                         <div class="form-group">
+                            <%# Menampilkan pesan error pada kolom 'Description' %>
+                            <% if @book.errors[:description].any? %>                        <div class="form-group">
+                                <%= @book.errors[:description].first %>
+                                <% end %>
+                            <% end %>
                             <td><%= t.label :description, "Sinopsis Buku" %></td>
                             <td><%= t.text_field :description, class:'form-control',type:'text', placeholder:'Apa Sinopsis Buku?' %></td>
                         </div>
