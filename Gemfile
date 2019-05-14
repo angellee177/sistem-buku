@@ -7,14 +7,14 @@ ruby '2.6.1'
 gem 'rails', '~> 5.2.3'
 
 # Install Postgresqlz
-# gem 'pg', '>= 0.18', '< 2.0'
+gem 'pg', '>= 0.18', '< 2.0'
 
-group :development do
-  gem 'sqlite3'
-end
-group :production do
-  gem 'pg'
-end
+# group :development do
+#   gem 'sqlite3'
+# end
+# group :production do
+#   gem 'pg'
+# end
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'

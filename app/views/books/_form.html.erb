@@ -1,3 +1,8 @@
+<% if @book.errors.any? %>
+    <% @book.errors.full_messages.each do |msg| %>
+        <%= msg %>
+    <% end %>
+<% end %>
 <%= render template:"admin-template/header.html" %>
     <div class="container">
         <div class="row">

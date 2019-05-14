@@ -8,10 +8,13 @@ class BooksController < ApplicationController
     end
 
     def create #untuk memproses create
-        book = Book.new(resources_params)
-        book.save
-        flash[:notice] = 'Data Berhasil di tambahkan'
-        redirect_to books_path
+        @book = Book.new(resources_params)
+        if @book.save
+            flash[:notice] = 'Data Berhasil di tambahkan'
+            redirect_to books_path
+        else
+            render 'new'
+        end
     end
 
     def edit #untuk form edit
