@@ -1,4 +1,7 @@
 class BooksController < ApplicationController
+    
+    before_action :user_signed_in?
+    
     def index #untuk menampilkan semua data yang ada dalam database
         @books = Book.all
     end

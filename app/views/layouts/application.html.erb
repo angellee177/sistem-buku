@@ -13,6 +13,23 @@
     <%= javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" %>
     <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" %>
   </head>
-
+  <body>
+  <h1>Sistem Buku Online</h1>
+  <%# Mengecek User %>
+  <% if current_user %>
+    <div>
+          <p>Halo &nbsp <%= current_user.name %></p>
+    </div>
+    <br>
+    <%= link_to "logout", session_path(current_user), method: :delete %>
+  <% else %>
+    silakan Login Terlebih Dahulu
+  <% end %>
+  <%# untuk memunculkan notice pada Controller %>
+  <% if flash[:notice].present? %>
+    <%= flash[:notice] %>
+  <% end %>
            <%= yield %>
+  </body>
+</html>
     

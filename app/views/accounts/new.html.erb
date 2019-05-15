@@ -1,0 +1,25 @@
+<%= render template:"admin-template/header.html" %>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <%= form_for @user, url: accounts_path do |u| %>
+            <div class="form-group">
+                <td><%= u.label        :name, "Nama Lengkap" %></td>
+                <td><%= u.text_field      :name, class:'form-control', type:'text', placeholder:'Masukkan Nama Lengkap ' %></td>
+            </div>
+            <div class="form-group">
+                <td><%= u.label          :username, "Username" %></td>
+                <td><%= u.text_field     :username, class:'form-control', type:'text', placeholder:'Masukkan Username Anda '%></td>
+            </div>
+            <div class="form-group">
+                <td><%= u.label          :password %></td>
+                <td><%= u.password_field :password, class:'form-control', type:'password', placeholder:'Masukkan Passowrd Anda ' %></td>
+            </div>
+            <div class="form-group">
+                <%= u.submit "Register" %>
+            </div>
+        <% end %>
+    </div>
+</div>
+<%= render template:"admin-template/footer.html" %>

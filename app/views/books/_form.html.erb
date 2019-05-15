@@ -3,21 +3,19 @@
         <div class="row">
                     <%= form_for(@book) do |t| %>
                         <div class="form-group">
-                            <%# Menampilkan pesan error pada kolom 'Title' %>
-                            <% if @book.errors[:title].any? %>                        <div class="form-group">
-                                <%= @book.errors[:title].first %>
-                                <% end %>
-                            <% end %>
                             <td><%= t.label :title, "Judul Buku" %></td>
+                            <%# Memunculkan pesan Errors pada kolom 'Title' %>
+                            <% if @book.errors[:title].any? %>          
+                                <%= @book.errors[:title].first %>
+                            <% end %>
                             <td><%= t.text_field :title, class:'form-control', type:'text', placeholder:'Masukkan Judul Buku' %></td>
                         </div>
                         <div class="form-group">
-                            <%# Menampilkan pesan error pada kolom 'Description' %>
-                            <% if @book.errors[:description].any? %>                        <div class="form-group">
-                                <%= @book.errors[:description].first %>
-                                <% end %>
-                            <% end %>
                             <td><%= t.label :description, "Sinopsis Buku" %></td>
+                            <%# Memunculkan pesan Errors pada kolom 'Description' %>
+                            <% if @book.errors[:description].any? %>          
+                                <%= @book.errors[:description].first %>
+                            <% end %>
                             <td><%= t.text_field :description, class:'form-control',type:'text', placeholder:'Apa Sinopsis Buku?' %></td>
                         </div>
                         <div class="form-group">
@@ -26,6 +24,10 @@
                         </div>
                         <div class="form-group">  
                             <td><%= t.label :page, "Jumlah Halaman" %></td>
+                            <%# Memunculkan pesan Errors pada kolom 'Page' %>
+                            <% if @book.errors[:page].any? %>          
+                                <%= @book.errors[:page].first %>
+                            <% end %>
                             <td><%= t.text_field :page, class:'form-control', type:'integer', placeholder:'Masukkan Jumlah Halaman' %></td>
                         </div>
                         <div class="form-group">
