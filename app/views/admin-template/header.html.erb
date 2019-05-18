@@ -110,17 +110,8 @@
   <div class="topnav" id="myTopnav">
     <a href="books">Data Buku</a>
     <a href="authors">Data Pengarang</a>
-    <div class="dropdown">
-      <button class="dropbtn">Dropdown
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="books">List Buku </a>
-        <a href="authors">List Author</a>
-        <a href="#">Link 3</a>
-      </div>
+    <%= link_to "logout", session_path(current_user), method: :delete %>
     </div> 
-    <%= link_to "logout", session_path(current_user), method: :delete, class:'a' %>
     <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
   </div>
 
