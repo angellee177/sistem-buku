@@ -120,7 +120,7 @@
         <a href="#">Link 3</a>
       </div>
     </div> 
-    <a href="#">Log Out</a>
+    <%= link_to "logout", session_path(current_user), method: :delete, class:'a' %>
     <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
   </div>
 

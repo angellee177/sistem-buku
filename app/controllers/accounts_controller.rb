@@ -4,8 +4,12 @@ class AccountsController < ApplicationController
     end
 
     def create
-        user = User.new(user_params)
-        user.save
+        @user = User.new(user_params)
+        if @user.save
+            redirect_to new_session_path, notice: 'Berhasil membuat Akun Baru.'
+        else
+            render 'new'
+        end
     end
     
     private

@@ -21,7 +21,6 @@
           <p>Halo &nbsp <%= current_user.name %></p>
     </div>
     <br>
-    <%= link_to "logout", session_path(current_user), method: :delete %>
   <% else %>
     silakan Login Terlebih Dahulu
   <% end %>
