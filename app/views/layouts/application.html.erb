@@ -16,14 +16,6 @@
   <body>
   <h1>Sistem Buku Online</h1>
   <%# Mengecek User %>
-  <% if current_user %>
-    <div>
-          <p>Halo &nbsp <%= current_user.name %></p>
-    </div>
-    <br>
-  <% else %>
-    silakan Login Terlebih Dahulu
-  <% end %>
   <%# untuk memunculkan notice pada Controller %>
   <% if flash[:notice].present? %>
     <%= flash[:notice] %>
